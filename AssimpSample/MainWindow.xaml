@@ -1,0 +1,38 @@
+﻿<Window x:Class="AssimpSample.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="SharpGL WPF Application" Height="350" Width="525" 
+        xmlns:sharpGL="clr-namespace:SharpGL.WPF;assembly=SharpGL.WPF" KeyDown="Window_KeyDown">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="0*"/>
+        </Grid.RowDefinitions>
+        <!-- The OpenGL control provides a OpenGL drawing surface. -->
+        <sharpGL:OpenGLControl 
+            Name="openGLControl" OpenGLDraw="openGLControl_OpenGLDraw" 
+            OpenGLInitialized="openGLControl_OpenGLInitialized" Resized="openGLControl_Resized"
+            DrawFPS="True" RenderContextType="FBO" FrameRate="10">
+        </sharpGL:OpenGLControl>
+        <Label Background="Crimson" Foreground="AntiqueWhite" Content="Boja svetla sveće :" HorizontalAlignment="Left" Margin="18,38,0,0" VerticalAlignment="Top"/>
+        <Label Background="Crimson" Foreground="AntiqueWhite" Content="Rotacija tanjira i sveće :" HorizontalAlignment="Left" Margin="18,7,0,0" VerticalAlignment="Top"/>
+        <Label Background="Crimson" Foreground="AntiqueWhite" Content="Veličina tanjira :" HorizontalAlignment="Left" Margin="18,69,0,0" VerticalAlignment="Top"/>
+        <ComboBox Name="Rotacija" HorizontalAlignment="Left" Margin="166,10,0,0" VerticalAlignment="Top" Width="50" SelectedIndex="0" SelectionChanged="ComboBox_SelectionChanged">
+            <ComboBoxItem Content="DA" Width="100"/>
+            <ComboBoxItem Content="NE" Width="100"/>
+        </ComboBox>
+        <ComboBox Name="Boja" HorizontalAlignment="Left" Margin="166,42,0,0" SelectedIndex="0" VerticalAlignment="Top" Width="75" SelectionChanged="ComboBox_SelectionChanged_1">
+            <ComboBoxItem Content="CRVENA" Width="100"/>
+            <ComboBoxItem Content="ZELENA" Width="100"/>
+            <ComboBoxItem Content="PLAVA" Width="100"/>
+        </ComboBox>
+        <ComboBox Name="Skala" HorizontalAlignment="Left" Margin="166,73,0,0" SelectedIndex="1" VerticalAlignment="Top" Width="49" SelectionChanged="ComboBox_SelectionChanged_2">
+            <ComboBoxItem Content="0.5" Width="100"/>
+            <ComboBoxItem Content="2" Width="100"/>
+            <ComboBoxItem Content="5" Width="100"/>
+            <ComboBoxItem Content="10" Width="100"/>
+            <ComboBoxItem Content="15" Width="100"/>
+            <ComboBoxItem Content="20" Width="100"/>
+        </ComboBox>
+    </Grid>
+</Window>
